@@ -1,0 +1,9 @@
+# info for meta of executable
+# requires pyinstaller-versionfile (pip install pyinstaller-versionfile)
+# run: create-version-file metadata.yml --outfile file_version_info.txt
+Version: 1.0.0
+FileDescription: Matrix multiplication app by Andrew Sementsov
+InternalName: matrix_multiplication
+LegalCopyright: Andrew Sementsov.
+OriginalFilename: matrix_multiplication.exe
+ProductName: Matrix multiplication app

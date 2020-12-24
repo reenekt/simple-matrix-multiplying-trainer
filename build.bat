@@ -1,0 +1,1 @@
+create-version-file metadata.yml --outfile file_version_info.txt && pyinstaller main.py --version-file=file_version_info.txt -F && -n matrix_multiplication
