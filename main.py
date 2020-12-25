@@ -10,7 +10,7 @@ from matrix import *
 
 
 def input_matrix():
-    matrix_reversed = []
+    matrix= []
     i = 0
     matrix_reversed_row_size = None
     print('Ввод матрицы. Вводите значения элементов строк через пробел. '
@@ -22,23 +22,24 @@ def input_matrix():
             print('Ввод массива завершен')
             break
 
-        matrix_row = input_str.split(' ')
+        matrix_row_str = input_str.split(' ')
         if matrix_reversed_row_size is None:
-            matrix_reversed_row_size = len(matrix_row)
+            matrix_reversed_row_size = len(matrix_row_str)
+
+        matrix_row = []
+        for item_str in matrix_row_str:
+            try:
+                item_number = int(item_str)
+            except ValueError:
+                print('Нужно ввести только целые числа! Попробуйте ввести снова')
+                continue
+            matrix_row.append(item_number)
 
         if len(matrix_row) != matrix_reversed_row_size:
             print('Неправильная длина строки. Попробуйте ввести снова')
         else:
             i += 1
-            matrix_reversed.append(matrix_row)
-
-    matrix = []
-    for i in range(len(matrix_reversed)):
-        for j in range(len(matrix_reversed[0])):
-            if len(matrix) - 1 < j:
-                matrix.append([])
-            # matrix[j][i] = matrix_reversed[i][j]
-            matrix[j].append(matrix_reversed[i][j])
+            matrix.append(matrix_row)
 
     return matrix
 
@@ -56,24 +57,16 @@ def main():
     first_matrix = get_matrix_filled_with_random_int(m, k)
     second_matrix = get_matrix_filled_with_random_int(k, n)
 
-    second_matrix = [[
-    # first_matrix = [[
-        2,
-        -1,
-        3
-    ], [
-        0,
-        -2,
-        -5
-    ]]
-    first_matrix = [[
-    # second_matrix = [[
-        -2,
-        4
-    ], [
-        3,
-        -1
-    ]]
+    first_matrix = [
+        [2, 0],
+        [-1, -2],
+        [3, -5]
+    ]
+    second_matrix = [
+        [-2, 3],
+        [4, -1]
+    ]
+    # first_matrix, second_matrix = second_matrix, first_matrix
 
     print('Даны две матрицы. Вычислите их произведение')
     print_matrix(first_matrix, second_matrix)
@@ -83,7 +76,11 @@ def main():
     true_multiplied_matrix = multiply_matrices(first_matrix, second_matrix)
     print('Проверка ответа. Слева ответ пользователя, справа правильный ответ.')
     print_matrix(user_matrix, true_multiplied_matrix)
-    # todo check equality
+    is_matrices_equal = check_matrices_equality(user_matrix, true_multiplied_matrix)
+    if is_matrices_equal:
+        print('Правильно. Ответ верный!')
+    else:
+        print('Ответ не верный!')
 
 
 if __name__ == '__main__':
