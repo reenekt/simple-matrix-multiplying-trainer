@@ -1,0 +1,40 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
+      - run: python -m unittest discover -s tests -p *test*.py
+    
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Package Application
+      uses: reenekt/pyinstaller-action-windows@main
+      with:
+        path: '.'
+        pyinstaller_args: '--version-file=file_version_info.txt -F -n matrix_multiplication'
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: matrix_multiplication windows app
+        path: dist/windows/matrix_multiplication.exe
