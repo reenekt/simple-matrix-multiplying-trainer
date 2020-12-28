@@ -2,7 +2,7 @@ from random import randint
 from prompts import *
 from array_filling import *
 from arrays_processing import *
-from matrix import *
+from src.matrix import *
 
 
 # Автор: Андрей Семенцов

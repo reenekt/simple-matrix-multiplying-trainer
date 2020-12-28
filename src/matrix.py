@@ -1,6 +1,6 @@
 from typing import List
 from random import randint
-from arrays import *
+from src.arrays import *
 
 
 def get_matrix_filled_with_random_int(x_size: int, y_size: int, random_min: int = -20, random_max: int = 80):

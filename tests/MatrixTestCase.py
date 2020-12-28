@@ -1,5 +1,5 @@
 import unittest
-from matrix import multiply_matrices
+from src.matrix import multiply_matrices
 
 
 class MyTestCase(unittest.TestCase):
