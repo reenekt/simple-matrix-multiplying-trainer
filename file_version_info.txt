@@ -31,12 +31,12 @@ VSVersionInfo(
       StringTable(
         u'040904B0',
         [StringStruct(u'CompanyName', u''),
-        StringStruct(u'FileDescription', u'test_app_build'),
+        StringStruct(u'FileDescription', u'Matrix multiplication app by Andrew Sementsov'),
         StringStruct(u'FileVersion', u'1.0.0.0'),
-        StringStruct(u'InternalName', u'test_app_build'),
+        StringStruct(u'InternalName', u'matrix_multiplication'),
         StringStruct(u'LegalCopyright', u'Andrew Sementsov.'),
-        StringStruct(u'OriginalFilename', u'SimpleApp.exe'),
-        StringStruct(u'ProductName', u'Test App Build'),
+        StringStruct(u'OriginalFilename', u'matrix_multiplication.exe'),
+        StringStruct(u'ProductName', u'Matrix multiplication app'),
         StringStruct(u'ProductVersion', u'1.0.0.0')])
       ]), 
     VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
