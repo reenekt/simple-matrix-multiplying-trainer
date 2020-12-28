@@ -31,7 +31,7 @@ jobs:
     - name: Package Application
       uses: reenekt/pyinstaller-action-windows@main
       with:
-        path: '.'
+        path: '/'
         pyinstaller_args: '--version-file=file_version_info.txt -F -n matrix_multiplication'
 
     - uses: actions/upload-artifact@v2
