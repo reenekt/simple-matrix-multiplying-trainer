@@ -75,7 +75,7 @@ def print_matrix(*matrices: List[List[int]], space_size: int = 5):
             # Данные для вывода
             if y > matrix_rows_count - 1:
                 # заглушки
-                for i in range(matrix_rows_count):
+                for i in range(matrix_columns_count):
                     matrix_item_str = ''
                     # Заполнение столбца мастрицы (точнее - элемента этого ряда) до нужной ширины
                     max_width_of_column = columns_width_values[i]
@@ -105,7 +105,8 @@ def print_matrix(*matrices: List[List[int]], space_size: int = 5):
 
             # после того, как были получены все элементы матрицы и если матрица
             # не последняя - добавляется отступ перед рядом следующей матрицей
-            if matrices.index(matrix) < len(matrices):
+            matrix_index = matrices.index(matrix)
+            if matrix_index < matrices_count - 1:
                 matrices_output_space_item = ''
                 for _ in range(space_size):
                     matrices_output_space_item += ' '
@@ -173,10 +174,10 @@ def multiply_matrices(first_matrix: List[List], second_matrix: List[List]):
         first_matrix, second_matrix = second_matrix, first_matrix
 
         # пересчет значений после перестановки матриц местами
-        first_matrix_columns_count = len(first_matrix)
-        first_matrix_rows_count = len(first_matrix[0])
-        second_matrix_columns_count = len(second_matrix)
-        second_matrix_rows_count = len(second_matrix[0])
+        first_matrix_rows_count = len(first_matrix)
+        first_matrix_columns_count = len(first_matrix[0])
+        second_matrix_rows_count = len(second_matrix)
+        second_matrix_columns_count = len(second_matrix[0])
 
         m = first_matrix_rows_count  # число строк первой матрицы
         k = first_matrix_columns_count  # число столбцов первой матрицы / строк второй
