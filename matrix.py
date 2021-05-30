@@ -37,7 +37,7 @@ def get_matrix_column(matrix: List[List[int]], column_index):
 
 def print_matrix(*matrices: List[List[int]], space_size: int = 5):
     """
-    Вывод матриц на экран. Может выводить несколько матрицв одну "строку"
+    Вывод матриц на экран. Может выводить несколько матриц в одну "строку"
     :param matrices: матрицы для вывода
     :param space_size: размер отступа между матрицами (количество пробелов)
     :return: None

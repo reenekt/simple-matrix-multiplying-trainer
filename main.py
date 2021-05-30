@@ -58,6 +58,9 @@ def run_question():
     m = randint(2, 4)
     k = randint(3, 4)  # число столбцов для одной и число строк для другой матрицы
     n = randint(2, 4)
+    m = 2
+    k = 3
+    n = 2
     first_matrix = get_matrix_filled_with_random_int(m, k)
     second_matrix = get_matrix_filled_with_random_int(k, n)
 
@@ -126,6 +129,11 @@ def main():
             print('\tПравильных ответов: ', questions_with_true_answers_count)
             print('\tНеправильных ответов: ', questions_with_wrong_answers_count)
             print('\t% правильных ответов: ', questions_with_true_answers_percent)
+            print('')
+
+            # пауза перед закрытием окна дял возможности просмотра результатов
+            print('Нажмите любую клавишу для закрытия окна')
+            input()
             break
 
 
